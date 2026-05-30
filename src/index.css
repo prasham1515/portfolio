@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Hero background blobs and animations */
+.hero-bg { position: absolute; inset: 0; }
+.hero-blob { filter: blur(40px); opacity: 0.28; transform-origin: center; }
+.blob-1 { animation: float-1 10s ease-in-out infinite; }
+.blob-2 { animation: float-2 12s ease-in-out infinite; }
+
+@keyframes float-1 {
+	0% { transform: translateY(0) translateX(0) scale(1); }
+	50% { transform: translateY(-24px) translateX(6px) scale(1.06); }
+	100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+@keyframes float-2 {
+	0% { transform: translateY(0) translateX(0) scale(1); }
+	50% { transform: translateY(20px) translateX(-8px) scale(1.04); }
+	100% { transform: translateY(0) translateX(0) scale(1); }
+}
+
+/* subtle gradient overlay */
+.hero-bg::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: radial-gradient(30% 30% at 10% 10%, rgba(59,130,246,0.06), transparent 10%), radial-gradient(20% 20% at 90% 90%, rgba(168,85,247,0.05), transparent 12%);
+	z-index: -5;
+	pointer-events: none;
+}
+
+/* Blobs that follow the mouse pointer */
+.blob-follow {
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 9999px;
+	filter: blur(28px);
+	mix-blend-mode: multiply;
+	will-change: transform;
+	pointer-events: none;
+	opacity: 0.38;
+}
+
+

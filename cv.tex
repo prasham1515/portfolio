@@ -1,0 +1,194 @@
+% !TeX spellcheck = en_GB
+% !TeX program = pdflatex
+%
+% LuxSleek-CV 1.1 LaTeX template
+% Author: Andreï V. Kostyrka, University of Luxembourg
+%
+% 1.1: added tracking and letter-spacing for prettier lower caps, added `~` for language levels
+% 1.0: initial release
+%
+% This template fills the gap in the available variety of templates
+% by proposing something that is not a custom class, not using any
+% hard-coded settings deeply hidden in style files, and provides
+% a handful of custom command definitions that are as transparent as it gets.
+% Developed at the University of Luxembourg.
+%
+% *NOTHING IS HARCODED, and never should be.*
+%
+% Target audience: applicants in the IT industry, or business in general
+%
+% The main strength of this template is, it explicitly showcases how
+% to break the flow of text to achieve the most flexible right alignment
+% of dates for multiple configurations.
+
+\documentclass[11pt, a4paper]{article} 
+
+\usepackage[T1]{fontenc}     % We are using pdfLaTeX,
+\usepackage[utf8]{inputenc}  % hence this preparation
+\usepackage[british]{babel}  
+\usepackage[left = 0mm, right = 0mm, top = 0mm, bottom = 0mm]{geometry}
+\usepackage[stretch = 25, shrink = 25, tracking=true, letterspace=30]{microtype}  
+\usepackage{graphicx}        % To insert pictures
+\usepackage{xcolor}          % To add colour to the document
+\usepackage{marvosym}        % Provides icons for the contact details
+\usepackage{fontawesome5}
+\usepackage{enumitem}        % To redefine spacing in lists
+\setlist{parsep = 0pt, topsep = 0pt, partopsep = 1pt, itemsep = 1pt, leftmargin = 6mm}
+
+\usepackage{FiraSans}        % Change this to use any font, but keep it simple
+\renewcommand{\familydefault}{\sfdefault}
+\newcommand{\contactitem}[2]{%
+\makebox[2em][c]{#1}\hspace{0.5em}#2\\[0.5ex]}
+\definecolor{cvblue}{HTML}{304263}
+
+%%%%%%% USER COMMAND DEFINITIONS %%%%%%%%%%%%%%%%%%%%%%%%%%%
+% These are the real workhorses of this template
+\newcommand{\dates}[1]{\hfill\mbox{\textbf{#1}}} % Bold stuff that doesn’t got broken into lines
+\newcommand{\is}{\par\vskip.5ex plus .4ex} % Item spacing
+\newcommand{\smaller}[1]{{\small$\diamond$\ #1}}
+\newcommand{\headleft}[1]{\vspace*{2ex}\textsc{\textbf{#1}}\par%
+    \vspace*{-1.5ex}\hrulefill\par\vspace*{0.7ex}}
+\newcommand{\headright}[1]{\vspace*{0.5ex}\textsc{\Large\color{cvblue}#1}\par%
+     \vspace*{-2ex}{\color{cvblue}\hrulefill}\par}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{hyperref}
+
+\begin{document}
+
+% Style definitions -- killing the unnecessary space and adding the skips explicitly
+\setlength{\topskip}{0pt}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\fboxsep}{0pt}
+\pagestyle{empty}
+\raggedbottom
+
+\begin{minipage}[t]{0.33\textwidth} %% Left column -- outer definition
+%  Left column -- top dark rectangle
+\colorbox{cvblue}{\begin{minipage}[t][5mm][t]{\textwidth}\null\hfill\null\end{minipage}}
+
+\vspace{-.2ex} % Eliminates the small gap
+\colorbox{cvblue!90}{\color{white}  %% LEFT BOX
+\kern0.09\textwidth\relax% Left margin provided explicitly
+\begin{minipage}[t][293mm][t]{0.82\textwidth}
+\raggedright
+\vspace*{2.5ex}
+
+\vspace{-1em}
+\begin{center}
+{\Huge Prasham}\\[0.2em]
+{\Huge \textbf{\textit{Titiya}}}
+\end{center}
+\vspace{-0.5em}
+
+% Centering without extra vertical spacing
+\null\hfill\includegraphics[width=0.65\textwidth]{43872 USA.jpg}\hfill\null
+
+\vspace*{0.5ex} % Extra space after the picture
+
+
+
+\headleft{Contact details}
+\small
+
+\contactitem{\Letter}{\small ptitiya@asu.edu}
+\contactitem{\faPhone}{+1 (480)\,764\,9256}
+\contactitem{\faGithub}{\href{https://github.com/prasham1515}{github.com/prasham1515}}
+\contactitem{\faLinkedin}{\href{https://www.linkedin.com/in/prasham-titiya}{LinkedIn}}
+\contactitem{\Mundus}{Tempe, AZ, USA}
+
+\normalsize
+
+\headleft{Profile}
+A motivated computer science graduate student with strong interests in artificial intelligence, machine learning, and scalable software systems. Experienced in building end-to-end AI applications including retrieval-augmented systems and multimodal reasoning pipelines, using modern deep learning frameworks. Adept at Python development, with a proven track record of improving system performance and designing research-driven solutions for complex data problems across NLP, knowledge graphs, and vision-language tasks.
+
+\headleft{Skills}
+\begin{itemize}
+\item Python, JavaScript, SQL
+\item PyTorch, TensorFlow, NLTK, OpenCV, Node.js
+\item Machine Learning, Deep Learning, LLMs, RAG, VectorDB, Neo4j
+\end{itemize} 
+
+\headleft{Certifications}
+\noindent \textbf{IBM AI Analyst} (\href{https://courses.ibmcep.cognitiveclass.ai/certificates/97ea27a2a34044c38f2a6c346a2c2703}{Link}) \hfill IBM 
+Demonstrated AI development skills with IBM Watson, including NLP, chatbots, and computer vision.
+
+
+\end{minipage}%
+\kern0.09\textwidth\relax%%Right margin provided explicitly to stretch the colourbox
+}
+\end{minipage}% Right column
+\hskip2.5em% Left margin for the white area
+\begin{minipage}[t]{0.56\textwidth}
+\setlength{\parskip}{0.8ex}% Adds spaces between paragraphs; use \\ to add new lines without this space. Shrink this amount to fit more data vertically
+
+\vspace{4ex}
+
+\headright{Education}
+
+\textbf{Arizona State University, Tempe, AZ, USA} \dates{2024--Present} \\
+\smaller{Masters of Science in Computer Science} \\
+\smaller{\textsc{Thesis Title}: Retrieval and Reasoning of Heterogenous Data.}
+
+\is
+\textbf{Vellore Institute of Technology, India} \dates{2020-2024} \\
+\smaller{Bachelor of Technology in Computer Science and Engineering}
+
+\headright{Experience}
+\textbf{Arizona State University} \hfill Tempe, AZ, USA \\
+\textit{Student Researcher} \dates{2024.09--pres.} \\
+\smaller{Developing a caption-guided context pruning pipeline for multimodal tables, improving reasoning by filtering irrelevant rows/columns.}
+\vspace{-0.3em}
+
+\smaller{Built a human-curated multimodal table QA dataset to evaluate large language model performance on real-world tabular data.}
+
+\is
+\textbf{University of Pennsylvania} \hfill Philadelphia, PA, USA \\
+\textit{Research Programmer} \dates{2025.05--2025.08} \\
+\smaller{Designed graph-augmented retrieval systems using knowledge graphs and LLMs, improving recall by 7--8\% over state-of-the-art baselines.} 
+\vspace{-0.3em}
+
+\smaller{Developed an autonomous retrieval agent combining Neo4j Cypher queries with HNSW search for hybrid symbolic-semantic reasoning.}
+
+\is
+\textbf{ANYO} \hfill Chennai, India \\
+\textit{Software Engineering Intern} \dates{2023.02--2023.05} \\
+\smaller{Deployed a RASA chatbot on AWS EKS using Kubernetes, reducing customer response times by 50\%.}
+\vspace{-0.3em}
+
+\smaller{Implemented scalable CI/CD pipelines to automate chatbot deployments, cutting release turnaround time by 30\%.}
+
+
+
+
+
+\headright{Publications}
+
+\textbf{MMTabReal: Real-World Benchmark for Multimodal Table Understanding} \textit{ACL 2026} \hfill (\href{https://arxiv.org/pdf/2505.21771}{Link}) \\
+\smaller{Curated a real-world multimodal table benchmark featuring images, logos, and icons within cells to evaluate MLLMs and systematically identify their failure modes.} 
+
+\textbf{SAGE: Structure Aware Graph Expansion for Retrieval of Heterogeneous
+Data} \textit{Under Review}\hfill (\href{https://arxiv.org/pdf/2602.16964}{Link}) \\
+\smaller{Designed structure-aware graph expansion method that builds a chunk graph using metadata similarity and improves retrieval via seed-based neighbor expansion with dense and sparse filtering..} 
+
+\textbf{Applied Artificial Intelligence to Boost Team Effectiveness through a Personality and Skill-Based Strategy} \textit{ICRTAC 2023} \hfill (\href{https://ieeexplore.ieee.org/document/10480783}{Link}) \\
+\smaller{Developed a framework leveraging BERT-based regression to infer OCEAN personality traits and optimize team formation via a novel algorithm that selects leaders and balances teams by skill and personality.} 
+
+
+\headright{Projects}
+
+\textbf{Conversational Speech Bot} \hfill(\href{https://github.com/prasham1515/Conversational-Speech-bot}{Link}) \\
+\smaller{Built an NLP voice assistant for bus routes and timings for visually impaired users, placing $3^{rd}$ in a hackathon.} 
+
+\textbf{Network-Based Intrusion Detection System (NIDS)} \hfill(\href{https://github.com/prasham1515/Conversational-Speech-bot}{Link}) \\
+\smaller{Built a machine learning and deep learning intrusion detection system with 93.9\% accuracy}
+\vspace{-0.3em}
+
+\smaller{Simulated DoS attacks and analyzed network flows to detect malicious activity and trigger alerts.} 
+
+
+
+\end{minipage}
+
+\end{document}
